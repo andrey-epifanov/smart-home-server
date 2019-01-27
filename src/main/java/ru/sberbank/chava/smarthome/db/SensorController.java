@@ -1,15 +1,13 @@
 package ru.sberbank.chava.smarthome.db;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import ru.sberbank.chava.smarthome.SmartHomeApplication;
 import ru.sberbank.chava.smarthome.pojo.Data;
 import ru.sberbank.chava.smarthome.pojo.Power;
+
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
