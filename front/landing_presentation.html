@@ -116,6 +116,9 @@
               <br>
               <img src="graphic.png" alt="">
               <br />
+			  <br><br>
+			  <br><br>
+			  <input id="check1"><label id = "lab" for="check1"></label>
 
               <script>
                 function loadPhones() {
@@ -137,8 +140,12 @@
 				  Http.send();
 				  Http.onreadystatechange = (e) =>{
 				  console.log(Http.responseText)
+
+				  document.getElementById("lab").innerHTML = Http.responseText;
+				  /*lab.text = Http.responseText;*/
+				  
 				  } 
-				  /* const url = 'http://127.0.0.1:8080/smart-home/power';
+				  /* const url = 'zhttp://127.0.0.1:8080/smart-home/power';
 				  const data = {
 					name: "Said";
 					id: 23
