@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" media="all" href="style.css" />
+    <script src="main.js"></script>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link color="#5bbad5" href="/safari-pinned-tab.svg" rel="mask-icon" />
+    <meta content="#ffffff" name="theme-color" />
+    <title>Smart House</title>
+    <meta content="" name="keywords" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header mod-simple mod-white">
+        <div class="fix">
+          <div class="header-controls-container">
+            <button class="main-menu-mobile-btn" id="js-menu-btn">
+              <span class="btn-line"></span>
+            </button>
+            <div class="header-controls">
+              <nav class="main-menu">
+                <div class="menu-item">
+                  <a class="menu-link">График счетчика электроэергии</a>
+                </div>
+                <div class="menu-item">
+                  <a class="menu-link">Личный кабинет</a>
+                </div>
+                <div class="menu-item">
+                  <a class="menu-link" href="/authors">Авторы</a>
+                </div>
+              </nav>
+              <div class="header-actions">
+                <div class="header-lang-switcher">
+                  <a
+                    class="switcher-link"
+                    href=""
+                    >Eng</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <article
+        class="article-show"
+        itemscope=""
+        itemtype="http://schema.org/Article"
+      >
+        <div
+          class="article-show-img"
+          style="background-image: url(&#39;backgroundimage.jpg&#39;)"
+        ></div>
+        <div class="fix">
+          <div class="article-show-data">
+            <h1 class="article-show-header" itemprop="name">Smart House</h1>
+          </div>
+          <div class="article-show-data">
+            <div>
+              <h2 class="article-show-header2">
+                Удаленное управление домом или дачей
+              </h2>
+            </div>
+          </div>
+          <div class="article-fix">
+            <div class="article-simple-text" itemprop="articleBody">
+              <div class="house_maket">
+                <div class="jack1"><img src="jack.jpg" alt="jack1" id = "jack01" onClick = "imgChange();"/></div>
+                <script type="text/javascript">
+                  var i = 0;
+                  var image = document.getElementById("jack01");
+                  var imgs = new Array('jack.jpg', 'sberbank-icon.png');
+                  function imgChange(){
+                    i++; i %= imgs.length;
+                    image.src = imgs[i];
+                  }
+                </script>
+                <div class="jack2"><img src="jack.jpg" alt="jack2" id = "jack02" onClick = "imgChange1();"/></div>
+                <script type="text/javascript">
+                  var i = 0;
+                  var image1 = document.getElementById("jack02");
+                  var imgs = new Array('jack.jpg', 'sberbank-icon.png');
+                  function imgChange1(){
+                    i++; i %= imgs.length;
+                    image1.src = imgs[i];
+                  }
+                </script>
+                <div class="jack3"><img src="jack.jpg" alt="jack3" id = "jack03" onClick = "imgChange2();"/></div>
+                <script type="text/javascript">
+                  var i = 0;
+                  var image2 = document.getElementById("jack03");
+                  var imgs = new Array('jack.jpg', 'sberbank-icon.png');
+                  function imgChange2(){
+                    i++; i %= imgs.length;
+                    image2.src = imgs[i];
+                  }
+                </script>
+                <div class="jack4"><img src="jack.jpg" alt="jack4" id = "jack04" onClick = "imgChange3();"/></div>
+                <script type="text/javascript">
+                  var i = 0;
+                  var image3 = document.getElementById("jack04");
+                  var imgs = new Array('jack.jpg', 'sberbank-icon.png');
+                  function imgChange3(){
+                    i++; i %= imgs.length;
+                    image3.src = imgs[i];
+                  }
+                </script>
+              </div>
+              <img src="house_maket.png" alt="house maket" />
+              <br />
+              <br>
+              <br>
+              <br>
+              <img src="graphic.png" alt="">
+              <br />
+
+              <script>
+                function loadPhones() {
+                  var xhr = new XMLHttpRequest();
+
+                  xhr.open('GET', 'http://127.0.0.1:8080/smart-home/power', false);
+                  xhr.send();
+
+				  alert(xhr.responseText);
+                  if (xhr.status != 200) {
+                    // обработать ошибку
+                    alert('Ошибка ' + xhr.status + ': ' + xhr.statusText);
+                  } else {
+                    // вывести результат
+                    alert(xhr.responseText);
+                  }
+                }
+              </script>
+              <br>
+              <br>
+              <br>
+              <p>
+               
+              </p>
+            </div>
+          </div>
+          <div class="article-fix">
+            <div class="article-comments"><div id="disqus_thread"></div></div>
+          </div>
+        </div>
+      </article>
+      <section class="section-box mod-highlighted">
+        <div class="fix">
+          <div class="form-btn-container">
+            <div class = id = "sendForm">
+            <button class = "updatedata" onclick="loadPhones()">Обновить данные</button></div>
+            <!-- <button class="btn" id="sendForm">Купить сейчас</button> -->
+            <script>
+              var $sendFormBtn = $("#sendForm");
+              $checkbox = $("input[type=checkbox]");
+
+              $sendFormBtn.prop("disabled", true);
+
+              $checkbox.on("click", function() {
+                if ($("input:checkbox:checked").length > 0) {
+                  $sendFormBtn.removeAttr("disabled");
+                } else {
+                  $sendFormBtn.prop("disabled", true);
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="fix">
+          <div class="footer-container">
+            <nav class="footer-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="" id="" target="">Контакты</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="" id="" target="">О нас</a>
+              </li>
+            </nav>
+          </div>
+        </div>
+      </footer>
+      <div id="fb-root"></div>
+      <script
+        async=""
+        defer=""
+        src="https://apis.google.com/js/platform.js"
+      ></script>
+    </div>
+  </body>
+</html>
