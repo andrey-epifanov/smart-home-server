@@ -41,15 +41,6 @@ public class SensorController {
 			"SELECT count_power FROM Power1 " +
 			"WHERE time_current IN (SELECT MAX(time_current) FROM Power1)";
 
-	@GetMapping(path="/addTest") // Map ONLY GET Requests
-	public @ResponseBody String addNewUserTest () {
-		// @ResponseBody means the returned String is the response, not a view name
-		// @RequestParam means it is a parameter from the GET or POST request
-
-		Power n = new Power(1, 100);
-		return "Saved";
-	}
-
 	@PostMapping(path="/addData")
 	public @ResponseBody String addData (@RequestBody Object objData) {
 		String jsonData = gson.toJson(objData);
@@ -70,7 +61,6 @@ public class SensorController {
 		Power n = new Power(1, 100);
 		n.setPeriod(1);
 		n.setValue(100);
-		//powerRepository.save(n);
 		return currDate + ":" + "0101";
 	}
 
