@@ -75,13 +75,13 @@ public class SensorController {
 	}
 
 	@GetMapping(path="/power")
-	public @ResponseBody Integer getPower() {
+	public @ResponseBody String getPower() {
 		Object objPower = DBsinglton.jdbcTemplate.queryForList(
 				SELECT_MAX_POWER
 			).get(0).get("count_power");
 		log.info("Last Power = " + objPower);
 
-		return (Integer)objPower;
+		return objPower.toString();
 	}
 
 }
