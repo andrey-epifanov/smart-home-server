@@ -12,6 +12,7 @@
   </head>
 
   <body>
+
     <div class="wrapper">
       <header class="header mod-simple mod-white">
         <div class="fix">
@@ -118,20 +119,29 @@
 
               <script>
                 function loadPhones() {
-                  var xhr = new XMLHttpRequest();
+                  /* var xhr = new XMLHttpRequest();
 
                   xhr.open('GET', 'http://127.0.0.1:8080/smart-home/power', false);
                   xhr.send();
-
-				  alert(xhr.responseText);
-                  if (xhr.status != 200) {
-                    // обработать ошибку
-                    alert('Ошибка ' + xhr.status + ': ' + xhr.statusText);
-                  } else {
-                    // вывести результат
-                    alert(xhr.responseText);
-                  }
-                }
+				
+				  xhr.onreadystatechange = function(){
+				    if(xhr.readyState == 4 && xhr.status == 200){
+					  alert(xhr.responseText);
+					} else { 
+				      alert('Ошибка ' + xhr.status + ': ' + xhr.statusText);
+				    }
+				  } */
+				  const Http = new XMLHttpRequest();
+				  const url = 'http://127.0.0.1:8080/smart-home/power';
+				  Http.open("GET", url);
+				  Http.send();
+				  Http.onreadystatechange = (e) =>{
+				  console.log(Http.responseText)
+				  }
+				}
+					
+                  
+              
               </script>
               <br>
               <br>
@@ -147,9 +157,9 @@
         </div>
       </article>
       <section class="section-box mod-highlighted">
-        <div class="fix">
-          <div class="form-btn-container">
-            <div class = id = "sendForm">
+        <div class ="fix">
+          <div class ="form-btn-container">
+            <div>
             <button class = "updatedata" onclick="loadPhones()">Обновить данные</button></div>
             <!-- <button class="btn" id="sendForm">Купить сейчас</button> -->
             <script>
@@ -173,12 +183,12 @@
         <div class="fix">
           <div class="footer-container">
             <nav class="footer-nav">
-              <li class="nav-item">
+              <!-- li class="nav-item">
                 <a class="nav-link" href="" id="" target="">Контакты</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="" id="" target="">О нас</a>
-              </li>
+              </li -->
+              <!-- li class="nav-item">
+                <a class="nav-link" href="" target="">О нас</a>
+              </li -->
             </nav>
           </div>
         </div>
