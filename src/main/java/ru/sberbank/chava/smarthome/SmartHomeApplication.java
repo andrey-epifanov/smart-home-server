@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
+import ru.sberbank.chava.smarthome.db.DBsinglton;
 
 import java.util.List;
 import java.util.Map;
@@ -23,6 +24,7 @@ public class SmartHomeApplication {
 				= new ClassPathXmlApplicationContext("jdbcBeans.xml");
 
 		JdbcTemplate jdbcTemplate = (JdbcTemplate) ctx.getBean("jdbcTemplate");
+		DBsinglton.jdbcTemplate = jdbcTemplate;
 
 		List<Map<String, Object>> answer = jdbcTemplate.queryForList("select 1 from dual");
 		log.info("Check JDBC connect . True ? = " + answer.size());

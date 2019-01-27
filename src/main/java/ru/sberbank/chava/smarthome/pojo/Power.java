@@ -8,30 +8,35 @@ import javax.persistence.Id;
 /**
  * Created by Андрей on 27.01.2019.
  */
-@Entity
+//@Entity
 public class Power {
 //    @Id
 //    @GeneratedValue(strategy= GenerationType.AUTO)
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer id;
+//    @Id
+//    @GeneratedValue(strategy= GenerationType.AUTO)
+//    private Integer id;
 
-    private int time_period;
-    private int count_power;
+    private int period;
+    private int value;
 
-    public void setTime_period(int time_period) {
-        this.time_period = time_period;
+    public Power(int period, int value) {
+        this.period = period;
+        this.value = value;
     }
 
-    public void setCount_power(int count_power) {
-        this.count_power = count_power;
+    public void setPeriod(int period) {
+        this.period = period;
     }
 
-    public int getTime_period() {
-        return time_period;
+    public void setValue(int value) {
+        this.value = value;
     }
 
-    public int getCount_power() {
-        return count_power;
+    public int getPeriod() {
+        return period;
+    }
+
+    public int getValue() {
+        return value;
     }
 }

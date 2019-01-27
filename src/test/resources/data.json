@@ -1,0 +1,28 @@
+{
+  "power": {
+    "period": 1,
+    "value": 100
+  },
+  "rossets": [
+    {
+      "id": 1,
+      "name": "kit",
+      "state": false
+    },
+    {
+      "id": 2,
+      "name": "bath",
+      "state": false
+    },
+    {
+      "id": 3,
+      "name": "room",
+      "state": false
+    },
+    {
+      "id": 4,
+      "name": "floor",
+      "state": true
+    }
+  ]
+}
