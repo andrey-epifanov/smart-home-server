@@ -1,4 +1,4 @@
-package ru.sberbank.chava.smarthome.db;
+package ru.sberbank.chava.smarthome.pojo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
