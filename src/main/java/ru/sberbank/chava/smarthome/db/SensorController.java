@@ -74,6 +74,7 @@ public class SensorController {
 		return currDate + ":" + "0101";
 	}
 
+	@CrossOrigin(origins = "*")
 	@GetMapping(path="/power")
 	public @ResponseBody String getPower() {
 		Object objPower = DBsinglton.jdbcTemplate.queryForList(

@@ -60,9 +60,9 @@ window.language = window.location.host.match("ru.") ? "ru" : "en",
 		// 	ie.addEventListener ? (ie.removeEventListener("DOMContentLoaded", a), e.removeEventListener("load", a)) : (ie.detachEvent("onreadystatechange", a), e.detachEvent("onload", a))
 		// }
 
-		function a() {
+		/*function a() {
 			(ie.addEventListener || "load" === e.event.type || "complete" === ie.readyState) && (s(), fe.ready())
-		}
+		}*/
 
 		// function l(e, t, n) {
 		// 	if (n === undefined && 1 === e.nodeType) {
