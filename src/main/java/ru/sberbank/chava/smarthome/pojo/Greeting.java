@@ -1,4 +1,4 @@
-package ru.sberbank.chava.smarthome.server;
+package ru.sberbank.chava.smarthome.pojo;
 
 public class Greeting {
 

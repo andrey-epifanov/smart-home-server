@@ -3,6 +3,8 @@ package ru.sberbank.chava.smarthome;
 import com.google.gson.Gson;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.aspectj.EnableSpringConfigured;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -19,8 +21,8 @@ import java.util.List;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @EnableSpringConfigured
-//@SpringBootApplication(exclude = SmartHomeApplication.class)
 public class DataTests {
+	private static final Logger log = LoggerFactory.getLogger(DataTests.class);
 
 	@Test
 	public void gennerateJsonTest() {
@@ -35,7 +37,7 @@ public class DataTests {
 
 		Gson gson = new Gson();
 		String json = gson.toJson(data);
-		System.out.println(json);
+		log.info(json);
 		Assert.hasText(json, "kit");
 		Assert.hasText(json, "bath");
 	}
@@ -43,7 +45,7 @@ public class DataTests {
 	@Test
 	public void timeTest() {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-		System.out.println("CurrDate = " + simpleDateFormat.format(new Date(System.currentTimeMillis())));
+		log.info("CurrDate = " + simpleDateFormat.format(new Date(System.currentTimeMillis())));
 	}
 
 }

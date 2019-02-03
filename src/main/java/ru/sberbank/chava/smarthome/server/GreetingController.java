@@ -3,6 +3,7 @@ package ru.sberbank.chava.smarthome.server;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import ru.sberbank.chava.smarthome.pojo.Greeting;
 
 import java.util.concurrent.atomic.AtomicLong;
 
